@@ -7,4 +7,4 @@ ciphertext = secure.encrypt(pw, key)
 print("Encrypted:", ciphertext)
 plaintext = secure.decrypt(ciphertext, key)
 print("Decrypted:", plaintext)
-
+ptint(test)
