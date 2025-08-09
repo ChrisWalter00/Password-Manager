@@ -1,25 +1,10 @@
-#import mysql.connector as mysql
+import secure
 
-#mydb = mysql.connect(
-#    host = "localhost",
-#    user = "root",
-#    password = "Cw-985342"
-#)
+pw = "testing_this_password"
+print(pw.encode('utf-8'))
+key = "test"
+ciphertext = secure.encrypt(pw, key)
+print("Encrypted:", ciphertext)
+plaintext = secure.decrypt(ciphertext, key)
+print("Decrypted:", plaintext)
 
-#mycursor = mydb.cursor()
-#mycursor.execute("SHOW DATABASES")
-#for x in mycursor:
-#    print(x)
-#print("done")
-import bcrypt
-salt1 = bcrypt.gensalt()
-salt2 = bcrypt.gensalt()
-username1 = "test"
-username2 = "test"
-b1 = username1.encode('utf-8')
-b2 = username2.encode('utf-8')
-hash1 = bcrypt.hashpw(b1, salt1)
-hash2 = bcrypt.hashpw(b2, salt2)
-print(hash1)
-print (salt1)
-print(hash2)

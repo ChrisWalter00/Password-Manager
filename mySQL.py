@@ -6,7 +6,7 @@ def connect():
     mydb = mysql.connect(
         host = "localhost",
         user = "root",
-        password = "Cw-985342"
+        password = ********,  #Replace with your MySQL password
     )
     global mycursor
     mycursor = mydb.cursor()
@@ -48,7 +48,7 @@ def get_password(search, id):
     value = (search, id)
     mycursor.execute(sql, value)
     info = mycursor.fetchall()
-    return(info)
+    return(info[0][-1])
 
 #delete a password in the database that matches the given purpose and user id
 def delete_password(search, id):

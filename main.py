@@ -23,12 +23,13 @@ def main():
                     purpose = input("Enter the purpose for the password (Amazon, gmail, etc.): ")
                     encrypted_pword = mySQL.get_password(purpose, id)
                     pword = secure.decrypt(encrypted_pword, key)
-                    print(pword)
+                    print("Password: ", pword)
                 case 3:#display all passwords
                     encrypted_pword = mySQL.get_all(id)
                     for i in encrypted_pword:
-                        pword = secure.decrypt(i, key)
-                        print(pword)
+                        pword = secure.decrypt(i[-1], key)
+                        print("Purpose: ", i[2])
+                        print("Password: ", pword)
                 case 4:#delete password
                     purpose = input("Enter the purpose for the password (Amazon, gmail, etc.): ")
                     mySQL.delete_password(purpose, id)
@@ -61,7 +62,7 @@ def login(): #attempt to login
             print("Successful Login!")
             return(given_password, id)
     print("Wrong Username/Password")#if password is incorrect
-    return
+    return (None, None) #return None if login fails
     
 
 def create_account():#create a new account
