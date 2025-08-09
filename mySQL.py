@@ -5,7 +5,7 @@ def connect():
     mydb = mysql.connect(
         host = "localhost",
         user = "root",
-        password = ******
+        password = "Cw-985342"
     )
     global mycursor
     mycursor = mydb.cursor()

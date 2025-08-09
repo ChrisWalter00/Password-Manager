@@ -1,4 +1,5 @@
 import bcrypt
+from Crypto.Cipher import AES
 
 def verify_pw(pw1, pw2):
     bytes = pw2.encode('utf-8')
@@ -14,5 +15,6 @@ def new_hash(input):
     return((hashed_pw, salt))
 
 def encrypt(password, key):
+    key = 
 
 def decrypt(password, key):
